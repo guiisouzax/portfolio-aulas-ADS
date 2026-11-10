@@ -71,18 +71,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ---------- Sobre ---------- */
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.about-photo {
-  width: 180px; height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  flex-shrink: 0;
-}
+
 .skills, .contact-links {
   list-style: none;
   display: flex; flex-wrap: wrap; gap: .6rem;
@@ -120,9 +109,91 @@ a:hover { text-decoration: underline; }
 }
 .contact-links a:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
 
-/* ---------- Celular ---------- */
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.hero-desc { max-width: 480px; margin-bottom: 1.5rem; color: var(--muted); }
+.hero-photo {
+  width: 220px; height: 220px;
+  object-fit: cover; border-radius: 50%;
+  border: 3px solid var(--accent);
+}
+
+.tabs { display: flex; gap: .5rem; }
+.tab, .link-btn {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--card); border-radius: 6px;
+  padding: .4rem .9rem; cursor: pointer; font: inherit;
+}
+.tab.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.link-btn { margin-top: .5rem; border-color: var(--accent); color: var(--accent); }
+
+.details { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--bg); }
+
 @media (max-width: 600px) {
-  .about-content { flex-direction: column; text-align: center; }
-  .skills { justify-content: center; }
-  .header nav a { margin-left: 1rem; }
+  .hero { flex-direction: column-reverse; text-align: center; }
+}
+
+/* ========== Tema vidro ========== */
+:root {
+  --accent: #7dd3fc;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+/* Fundo colorido: o vidro só aparece se tiver algo atrás para desfocar */
+body {
+  background: #0b1020;
+  min-height: 100vh;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(40vmax 40vmax at 15% 20%, rgba(56, 189, 248, 0.45), transparent 60%),
+    radial-gradient(35vmax 35vmax at 85% 30%, rgba(168, 85, 247, 0.40), transparent 60%),
+    radial-gradient(45vmax 45vmax at 50% 90%, rgba(244, 114, 182, 0.30), transparent 60%);
+}
+
+/* O efeito de vidro em si */
+.header,
+.card,
+.tab,
+.link-btn,
+.skills li,
+.contact-links a {
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.header { border-width: 0 0 1px 0; }
+.card { border-radius: 20px; padding: 1.5rem; }
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn {
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.9), rgba(168, 85, 247, 0.8));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(125, 211, 252, 0.25);
+}
+
+.contact-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.details { border-top-color: rgba(255, 255, 255, 0.15); }
+
+.hero-photo {
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(125, 211, 252, 0.35);
 }
