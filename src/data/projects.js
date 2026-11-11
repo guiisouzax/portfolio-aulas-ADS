@@ -30,11 +30,38 @@ const projects = [
     tech: ['HTML', 'CSS', 'JavaScript'],
     details: '',
     link: 'https://github.com/guiisouzax/calculadoraprarico',
+   },
+
+  
+   {
+    id: 4,
+    title: 'InstaFLEXY',
+    description: 'Extensão do chrome, para ver quem não te segue de volta no Instagram.',
+    tech: ['HTML','JavaScript', 'Json'],
+    details: '',
+    link: 'https://github.com/guiisouzax/InstaFLEXY',
+   },
+
+
+   {
+    id: 5,
+    title: 'HIG-TEC',
+    description: 'LandPage de serviço para um amigo, hospedada na VERCEL.',
+    tech: ['HTML','CSS'],
+    details: '',
+    link: 'https://github.com/guiisouzax/hig-tec',
+   },
+
+   {
+    id: 6,
+    title: 'Batalha-Épica',
+    description: 'Desafio do 2° Período da faculdade, RPG de batalha pelo terminal do VSCODE.',
+    tech: ['PYTHON'],
+    details: '',
+    link: 'https://github.com/guiisouzax/batalha-epica',
    }
 
-
-
-
+   
 ]
 
 export default projects
