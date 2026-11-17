@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-text">
-        <p className="hero-hi">Olá, eu sou</p>
+        <p className="hero-hi">Olá, meu nome é</p>
         <h1>Guilherme Souza</h1>
         <p className="hero-role">Suporte de T.I</p>
         <p className="hero-desc">

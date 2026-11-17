@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="header">
-      <strong className="logo">Guilherme Souza</strong>
+      <strong className="logo">Portfólio Profissional</strong>
       <nav>
         <a href="#habilidades">Habilidades</a>
         <a href="#sobre">Sobre</a>
